@@ -6,7 +6,6 @@ display_info() {
   echo -e "\033[1;32m CPU Usage \033[0m"
   echo "--------------------------------------------------------------------"
   top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print "CPU usage: " 100 - $1 "%"}'
-  # mpstat | awk '/all/ {printf "CPU Load: %5.1f%%\n", 100-$12}'
   echo ""
 
   echo -e "\033[1;32m Memory Usage \033[0m"
@@ -16,7 +15,7 @@ display_info() {
 
   echo -e "\033[1;32m Disk Usage \033[0m"
   echo "--------------------------------------------------------------------"
-  df -h | grep -v 'none' | grep -v 'snapfuse' | awk 'NR==1{print $0} NR>1{printf "%-9s %10s %5s %5s %4s %s\n", $1, $2, $3, $4, $5, $6}'
+  df -h | awk 'NR==1{print $0} NR>1{printf "%-9s %10s %5s %5s %4s %s\n", $1, $2, $3, $4, $5, $6}'
   echo ""
 
   echo -e "\033[1;34m=====================================================================\033[0m"
