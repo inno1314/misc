@@ -1,0 +1,7 @@
+URL,Статус,Код/Сообщение
+google.com,Доступен,200
+https://youtube.com,Доступен,200
+github.com,Доступен,200
+example.com,Доступен,200
+instagram.com,Не доступен,"Таймаут: HTTPConnectionPool(host='instagram.com', port=80): Read timed out. (read timeout=10)"
+nonexistentdomain12345.com,Не доступен,"Ошибка подключения: HTTPConnectionPool(host='nonexistentdomain12345.com', port=80): Max retries exceeded with url: / (Caused by NameResolutionError(""<urllib3.connection.HTTPConnection object at 0x7fe5d49dba00>: Failed to resolve 'nonexistentdomain12345.com' ([Errno -2] Name or service not known)""))"
